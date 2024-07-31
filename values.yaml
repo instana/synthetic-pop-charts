@@ -117,6 +117,13 @@ http:
       cpu: 300m
       memory: 500Mi
 
+  ## Custom node tolerations assist HTTP probes to run on dedicated edge nodes in certain clusters
+  tolerations:
+    enabled: false
+    effect: NoExecute
+    key: dedicated
+    operator: Equal
+    value: edge
 
 # synthetic-pop-javascript playback engine
 javascript:
