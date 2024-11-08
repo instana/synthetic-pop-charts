@@ -14,7 +14,6 @@ spec:
       component: synthetic-pop-controller
   policyTypes:
     - Ingress
-    - Egress
   ingress:
     - ports:
       - port: 8443
@@ -23,17 +22,6 @@ spec:
       - podSelector:
           matchLabels:
             app.kubernetes.io/name: instana-agent
-  egress:
-    - ports:
-      - port: 6379
-        protocol: TCP
-      to:
-      - podSelector:
-          matchLabels:
-            app: redis
-        namespaceSelector:
-          matchLabels:
-            kubernetes.io/metadata.name: {{ .Values.controller.redisNamespace }}
 {{- end }}
 ---
 {{- if .Values.redis.enabled }}
