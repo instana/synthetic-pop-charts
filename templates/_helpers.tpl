@@ -219,3 +219,15 @@ Get proxyUserPassPath path
 {{- define "proxy.userPassPath" -}}
 {{- printf "/etc/pop/proxyuserpass" -}}
 {{- end -}}
+
+{{/*
+Get all non empty ENV variables from browserscript
+*/}}
+{{- define "synthetic-pop.browserscript.envVariables" -}}
+{{- $envVars := .Values.browserscript.env | default list -}}
+{{- range $envVars }}
+  {{- if .value }}
+    {{- printf "- name: %s\n  value: %q\n" .name .value -}}
+  {{- end }}
+{{- end }}
+{{- end }}

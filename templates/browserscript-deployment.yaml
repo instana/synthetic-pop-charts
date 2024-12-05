@@ -123,6 +123,7 @@ spec:
         # enable/disable HAR collection
         - name: ENABLE_HAR_COLLECTION
           value: "yes"
+        {{- include "synthetic-pop.browserscript.envVariables" . | nindent 8 }}
       volumes: 
         - name: dshm
           emptyDir: {}
