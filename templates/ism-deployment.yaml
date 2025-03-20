@@ -115,9 +115,9 @@ spec:
         # length of sandbox pool
         - name: SANDBOX_LENGTH
           value: "3"
-        # timeout for DNSAction, default is 10 seconds
-        - name: DNSACTION_TIMEOUT
-          value: {{ .Values.ism.maxTimeout.DNSAction | quote }}
+        # timeout for DNS, default is 10 seconds
+        - name: DNS_TIMEOUT
+          value: {{ .Values.ism.maxTimeout.DNS | quote }}
         # timeout for SSLCertificate, default is 30 seconds
         - name: SSLCERTIFICATE_TIMEOUT
           value: {{ .Values.ism.maxTimeout.SSLCertificate | quote }}
