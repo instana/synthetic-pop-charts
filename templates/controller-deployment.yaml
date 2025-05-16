@@ -125,19 +125,19 @@ spec:
         - name: RUN_NOW
           value: {{ .Values.controller.runNowEnabled | default "false" | quote }}
         - name: HTTPACTION_PLAYBACK_URL
-          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=HttpPlaybackConfigQueue&AARQueue=AARQueue"
+          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=HttpPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
         - name: HTTPSCRIPT_PLAYBACK_URL
-          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=HttpScriptPlaybackConfigQueue&AARQueue=AARQueue"
+          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=HttpScriptPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
         - name: WEBPAGEACTION_PLAYBACK_URL
-          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=BrowserScriptPlaybackConfigQueue&AARQueue=AARQueue"
+          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=BrowserScriptPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
         - name: BROWSERSCRIPT_PLAYBACK_URL
-          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=BrowserScriptPlaybackConfigQueue&AARQueue=AARQueue"
+          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=BrowserScriptPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
         - name: WEBPAGESCRIPT_PLAYBACK_URL
-          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=BrowserScriptPlaybackConfigQueue&AARQueue=AARQueue"
+          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=BrowserScriptPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
         - name: DNS_PLAYBACK_URL
-          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=ISMPlaybackConfigQueue&AARQueue=AARQueue"
+          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=ISMPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
         - name: SSLCERTIFICATE_PLAYBACK_URL
-          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=ISMPlaybackConfigQueue&AARQueue=AARQueue"
+          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=ISMPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
         - name: TLS_ENABLED
           value: {{ .Values.redis.tls.enabled | default false | quote }}
         {{- if .Values.redis.tls.enabled }}
