@@ -4,7 +4,7 @@ controller:
   enabled: true
   image:
     name: "synthetic-pop-controller"
-    tag: "1.295.0"
+    tag: "1.296.0"
     # image.pullPolicy specifies when to pull the image
     pullPolicy: "Always"
 
@@ -33,14 +33,12 @@ controller:
   # Current release only supports syntheticType=WebpageAction,WebpageScript,HTTPAction,HTTPScript,BrowserScript,SSLCertificate,DNS
   # API Simple test type: HTTPAction, API Script test type: HTTPScript
   # Browser Script test type: BrowserScript, Webpage Simple test type: WebpageAction and Webpage Script test type: WebpageScript
-  capabilities: "syntheticType=WebpageAction,WebpageScript,HTTPAction,HTTPScript,BrowserScript,SSLCertificate,DNS;browserType=firefox,chrome"
+  capabilities: "syntheticType=WebpageAction,WebpageScript,HTTPAction,HTTPScript,BrowserScript,SSLCertificate,DNS;browserType=firefox,chrome;executionType=CI/CD"
 
   # Optionally, controller.clusterName needs to be set with the name of the Kubernetes cluster that is to be displayed in Instana.
   # Set this value when Instana agent is installed to monitor this PoP.
   clusterName: ""
 
-  # Set this value to true if run now tests needs to be scheduled by the controller
-  runNowEnabled: false
 
   # custom tags for this location, format is "tag1=value1;tag2=value2"
   customProperties: ""
@@ -97,7 +95,7 @@ http:
   image:
     name: "synthetic-playback-http"
     # tag is the tag name of the container image
-    tag: "1.295.0"
+    tag: "1.296.0"
     # image.pullPolicy specifies when to pull the image.
     pullPolicy: "Always"
 
@@ -128,7 +126,7 @@ javascript:
   image:
     name: "synthetic-playback-javascript"
     # image.tag is the tag name of the container image
-    tag: "1.295.0"
+    tag: "1.296.0"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
@@ -161,7 +159,7 @@ browserscript:
   image:
     name: "synthetic-playback-browserscript"
     # image.tag is the tag name of the container image;
-    tag: "1.295.0"
+    tag: "1.296.0"
     # image.pullPolicy specifies when to pull the image.
     pullPolicy: "Always"
 
@@ -204,7 +202,7 @@ ism:
   image:
     name: "synthetic-playback-ism"
     # image.tag is the tag name of the container image;
-    tag: "1.295.0"
+    tag: "1.296.1"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
@@ -235,7 +233,7 @@ redis:
   enabled: true
   image:
     name: "redis"
-    tag: "1.295.0"
+    tag: "1.296.0"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 

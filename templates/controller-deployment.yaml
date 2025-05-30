@@ -122,8 +122,6 @@ spec:
           value: {{ .Values.controller.capabilities | quote }}
         - name: CUSTOM_PROPERTIES
           value: {{ .Values.controller.customProperties | quote }}
-        - name: RUN_NOW
-          value: {{ .Values.controller.runNowEnabled | default "false" | quote }}
         - name: HTTPACTION_PLAYBACK_URL
           value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=HttpPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
         - name: HTTPSCRIPT_PLAYBACK_URL

@@ -121,9 +121,9 @@ spec:
         # timeout for SSLCertificate, default is 30 seconds
         - name: SSLCERTIFICATE_TIMEOUT
           value: {{ .Values.ism.maxTimeout.SSLCertificate | quote }}
-        # concurrency request number, default is 500
+        # concurrency request number, default is 1000
         - name: CONCURRENCY_REQUESTS
-          value: "500"
+          value: "1000"
         # Loglevel: ALL, TRACE, DEBUG, INFO, WARN, ERROR, FATAL, MARK
         - name: LOGLEVEL
           value: {{ .Values.ism.traceLevel | default "INFO"	| quote }}
