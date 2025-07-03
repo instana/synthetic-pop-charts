@@ -1,7 +1,13 @@
 annotations:
   artifacthub.io/changes: |
+    - kind: fixed
+      description: Rolled back Chromium to version 113.0.5672.0 to address stability and compatibility issues introduced in the recent upgrade.
+    - kind: fixed
+      description: Fixed incorrect error reporting in Webpage Simple tests for non-200 HTTP responses.
     - kind: added
-      description: Roll back Chromium to previous version to avoid video recording capability to crash.
+      description: Improved performance of the ISM playback engine to support higher test loads.
+    - kind: added
+      description: Integrated support for IBM Secret Manager for secure credential handling.
   artifacthub.io/links: |
     - name: Instana website
       url: https://www.instana.com
