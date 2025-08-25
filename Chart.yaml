@@ -14,7 +14,7 @@ annotations:
     - name: Instana Synthetic PoP Helm charts
       url: https://github.com/instana/synthetic-pop-charts
 apiVersion: v2
-appVersion: 1.303.0
+appVersion: 1.303.1
 description: Helm chart to install Instana Synthetic PoP (Point of Presence)
 home: https://artifacthub.io/packages/helm/instana/synthetic-pop
 icon: https://agents.instana.io/helm/synthetic-pop-logo.png
@@ -29,4 +29,4 @@ maintainers:
   name: Carol Zhang
 name: synthetic-pop
 type: application
-version: 1.2.24
+version: 1.2.25
