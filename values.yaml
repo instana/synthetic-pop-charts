@@ -233,7 +233,7 @@ redis:
   enabled: true
   image:
     name: "redis"
-    tag: "1.302.1"
+    tag: "1.301.3"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
