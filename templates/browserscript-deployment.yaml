@@ -68,6 +68,8 @@ spec:
             name: user-script
           - mountPath: /opt/ibm/apm/playback/browserscript/logs
             name: browserscript-logs
+          - mountPath: /opt/bin
+            name: chrome-bin
           {{- if .Values.redis.tls.enabled }}
           - name: tls
             mountPath: {{ include "tls.certPath" . | quote }}
@@ -120,6 +122,9 @@ spec:
         # enable/disable headless browser mode
         - name: ENABLE_HEADLESS_BROWSER
           value: "false"
+        # enable/disable old and new browser mode
+        - name: BROWSERSCRIPT_NEW_ENGINE
+          value: {{ .Values.browserscript.isNewEngine | quote }}
         # enable/disable HAR collection
         - name: ENABLE_HAR_COLLECTION
           value: "yes"
@@ -134,6 +139,8 @@ spec:
         - name: browserscript-logs
           emptyDir: {}
         - name: app-root
+          emptyDir: {}
+        - name: chrome-bin
           emptyDir: {}
         {{- if .Values.redis.tls.enabled }}
         - name: tls
