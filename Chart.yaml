@@ -1,21 +1,18 @@
 annotations:
-  artifacthub.io/changes: |-
+  artifacthub.io/changes: |
     - kind: fixed
       description: The following security vulnerabilities are fixed in Synthetic PoP:
-                    - CVE-2025-21502
-                    - CVE-2024-21145
+                    - CVE-2025-11226
+                    - CVE-2025-41242
                     - CVE-2025-49844
-    - kind: added
-      description: The Synthetic PoP BrowserScript playback engine now supports Chromium 138.
-    - kind: added
-      description: Synthetic JavaScript playback engine now supports Oracle database driver
+                    - CVE-2025-54798
   artifacthub.io/links: |
     - name: Instana website
       url: https://www.instana.com
     - name: Instana Synthetic PoP Helm charts
       url: https://github.com/instana/synthetic-pop-charts
 apiVersion: v2
-appVersion: 1.307.0
+appVersion: 1.308.0
 description: Helm chart to install Instana Synthetic PoP (Point of Presence)
 home: https://artifacthub.io/packages/helm/instana/synthetic-pop
 icon: https://agents.instana.io/helm/synthetic-pop-logo.png
@@ -30,4 +27,4 @@ maintainers:
   name: Carol Zhang
 name: synthetic-pop
 type: application
-version: 1.2.30
+version: 1.2.31
