@@ -1,11 +1,7 @@
 annotations:
   artifacthub.io/changes: |
     - kind: fixed
-      description: The following security vulnerabilities are fixed in Synthetic PoP:
-                    - CVE-2025-11226
-                    - CVE-2025-41242
-                    - CVE-2025-49844
-                    - CVE-2025-54798
+      description: The following security vulnerabilities are fixed in Synthetic PoP: CVE-2025-11226, CVE-2025-41242, CVE-2025-49844, CVE-2025-54798
   artifacthub.io/links: |
     - name: Instana website
       url: https://www.instana.com
