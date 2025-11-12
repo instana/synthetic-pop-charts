@@ -328,3 +328,9 @@ roRootFileSystem: true
 # Select the Point Of Presence Architecture, default: amd64
 # Change it to arm64 for testing.
 popArch: "amd64"
+
+# Use this to add additional labels to all resources, for example:
+# extraLabels:
+#   environment: production
+extraLabels: {}  
+  
