@@ -115,6 +115,12 @@ helm.sh/chart: {{ include "synthetic-pop.chart" . }}
 release: synthetic-pop
 instana-autotrace: "{{ if .Values.autotraceWebhookEnabled }}true{{ else }}false{{ end }}"
 {{- end -}}
+
+{{/* Add user-defined labels from values.yaml */}}
+{{- with .Values.extraLabels }}
+{{ toYaml . | nindent 0 }}
+{{- end }}
+{{- end -}}
 {{- end -}}
 
 {{/*
