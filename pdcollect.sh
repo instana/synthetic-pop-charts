@@ -66,6 +66,7 @@ for line in $(kubectl get po -n $namespace | grep 'synthetic-pop' | awk {'print$
         *"controller"*)
            kubectl exec $line -n $namespace -- printenv | grep -i POP_CONTROLLER_VERSION  >> version.log 2>&1
            kubectl cp ${line}:logs ./${line}_log -n $namespace >> mountdir.log 2>&1
+           kubectl logs $line -n $namespace >> ./${line}_log/controller.log 2>&1
            ;;
         *"http"*)
            kubectl exec $line -n $namespace -- printenv | grep -i HTTP_ENGINE_VERSION  >> version.log 2>&1
