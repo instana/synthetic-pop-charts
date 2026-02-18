@@ -37,6 +37,13 @@ spec:
                 operator: In
                 values:
                 - {{ .Values.popArch }}
+      {{- if .Values.http.tolerations.enabled }}
+      tolerations:
+      - effect: {{ Values.http.tolerations.effect }}
+        key: {{ Values.http.tolerations.key }}
+        operator: {{ Values.http.tolerations.operator }}
+        value: {{ Values.http.tolerations.value }}
+      {{- end }}
       imagePullSecrets:
       {{- if .Values.downloadKey }}
       - name: "instana-io"
