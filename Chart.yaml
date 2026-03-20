@@ -1,28 +1,39 @@
 annotations:
-  artifacthub.io/changes: |-
-    - kind: fixed
-      description: The following security vulnerability is fixed in Synthetic PoP: CVE-2025-5115
-                                                                                 - CVE-2026-1225
-                                                                                 - CVE-2026-27699
+  artifacthub.io/changes: "- kind: fixed\n  description: The following security vulnerability
+    is fixed in Synthetic PoP: CVE-2026-33036\n                                                                             -
+    CVE-2026-31808 \n                                                                             -
+    CVE-2026-32141\n                                                                             -
+    CVE-2026-29786\n                                                                             -
+    CVE-2026-2391\n                                                                             -
+    CVE-2026-1605\n                                                                             -
+    CVE-2026-26996\n                                                                             -
+    CVE-2026-27903\n                                                                             -
+    CVE-2026-27904\n                                                                             -
+    CVE-2026-27699\n                                                                             -
+    CVE-2026-27601\n                                                                             -
+    CVE-2026-25896\n                                                                             -
+    CVE-2026-26278\n                                                                             -
+    CVE-2026-27942\n                                                                             -
+    CVE-2025-65945\n                                                                             -
+    CVE-2025-13465\n                                                                             -
+    GHSA-72hv-8253-57qq"
   artifacthub.io/links: |
     - name: Instana website
       url: https://www.instana.com
     - name: Instana Synthetic PoP Helm charts
       url: https://github.com/instana/synthetic-pop-charts
 apiVersion: v2
-appVersion: 1.315.0
+appVersion: 1.315.1
 description: Helm chart to install Instana Synthetic PoP (Point of Presence)
 home: https://artifacthub.io/packages/helm/instana/synthetic-pop
 icon: https://agents.instana.io/helm/synthetic-pop-logo.png
 maintainers:
-- email: mccormik@us.ibm.com
-  name: Karl McCormick
 - email: ediazgallego@ibm.com
   name: Esteban Diaz Gallego
 - email: Swetha.Lohith@ibm.com
   name: Swetha Lohith
-- email: czhang@us.ibm.com
-  name: Carol Zhang
+- email: navaminarendralal@ibm.com
+  name: Navami Narendralal
 name: synthetic-pop
 type: application
-version: 1.2.40
+version: 1.2.41
