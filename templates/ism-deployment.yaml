@@ -127,6 +127,7 @@ spec:
         # Loglevel: ALL, TRACE, DEBUG, INFO, WARN, ERROR, FATAL, MARK
         - name: LOGLEVEL
           value: {{ .Values.ism.traceLevel | default "INFO"	| quote }}
+        {{- include "synthetic-pop.ism.envVariables" . | nindent 8 }}
       volumes:
       - name: logs
         emptyDir: {}

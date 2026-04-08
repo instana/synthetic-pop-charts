@@ -4,7 +4,7 @@ controller:
   enabled: true
   image:
     name: "synthetic-pop-controller"
-    tag: "1.315.0"
+    tag: "1.315.1"
     # image.pullPolicy specifies when to pull the image
     pullPolicy: "Always"
 
@@ -95,7 +95,7 @@ http:
   image:
     name: "synthetic-playback-http"
     # tag is the tag name of the container image
-    tag: "1.315.0"
+    tag: "1.316.0"
     # image.pullPolicy specifies when to pull the image.
     pullPolicy: "Always"
 
@@ -118,6 +118,46 @@ http:
       cpu: 300m
       memory: 500Mi
 
+  # -------------------------------------------------------------------------
+  # Playback Engine Proxy Environment Variables
+  #
+  # These env variables configure OS-level proxy settings ONLY for the
+  # playback-engine containers (HTTP, JavaScript, BrowserScript, ISM).
+  #
+  # IMPORTANT:
+  # - These variables are used to route OUTBOUND test traffic (external URLs)
+  #   through a corporate proxy.
+  # - They do NOT affect PoP → Instana backend connectivity.
+  # - They MUST NOT be confused with the "proxy.popProxy*" settings above.
+  #
+  # DO NOT use these variables for backend connectivity.
+  # The "proxy.popProxy*" section is the ONLY supported method for configuring
+  # a proxy for PoP → Instana backend communication.
+  #
+  # Use these variables ONLY if you want selective-proxy behavior:
+  #   - playback engines use the proxy for internet-facing tests
+  #   - the PoP controller continues to connect directly to the Instana backend
+  #
+  # Typical example:
+  #   HTTP_PROXY  → http://proxy:3128
+  #   HTTPS_PROXY → http://proxy:3128
+  #   NO_PROXY    → instana.backend.url,.svc,.cluster.local
+  #
+  # These settings are optional and safe to leave empty by default.
+  # -------------------------------------------------------------------------
+
+  ## Other env variables needed to set in the synthetic-pop-http playback engine pod
+  env:
+    # HTTP proxy server URL for HTTP requests. Example: "http://proxy.example.com:3128"
+    - name: HTTP_PROXY
+      value: ""
+    # HTTPS proxy server URL for HTTPS requests. Example: "http://proxy.example.com:3128"
+    - name: HTTPS_PROXY
+      value: ""
+    # Comma-separated list of hosts/domains to bypass proxy. Example: "localhost,.svc,.cluster.local,instana.backend.url"
+    - name: NO_PROXY
+      value: ""
+
 
 # synthetic-pop-javascript playback engine
 javascript:
@@ -126,7 +166,7 @@ javascript:
   image:
     name: "synthetic-playback-javascript"
     # image.tag is the tag name of the container image
-    tag: "1.315.0"
+    tag: "1.316.0"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
@@ -152,6 +192,19 @@ javascript:
       cpu: 800m
       memory: 300Mi
 
+  ## Other env variables needed to set in the synthetic-pop-javascript playback engine pod
+  ## See "Playback Engine Proxy Environment Variables" section above for detailed explanation
+  env:
+    # HTTP proxy server URL for HTTP requests. Example: "http://proxy.example.com:3128"
+    - name: HTTP_PROXY
+      value: ""
+    # HTTPS proxy server URL for HTTPS requests. Example: "http://proxy.example.com:3128"
+    - name: HTTPS_PROXY
+      value: ""
+    # Comma-separated list of hosts/domains to bypass proxy. Example: "localhost,.svc,.cluster.local,instana.backend.url"
+    - name: NO_PROXY
+      value: ""
+
 # synthetic-pop-browserscript  playback engine
 browserscript:
   # browserscript.enabled specifies whether to deploy the synthetic-pop-browserscript or not
@@ -159,7 +212,7 @@ browserscript:
   image:
     name: "synthetic-playback-browserscript"
     # image.tag is the tag name of the container image;
-    tag: "1.315.0"
+    tag: "1.315.2"
     # image.pullPolicy specifies when to pull the image.
     pullPolicy: "Always"
 
@@ -191,10 +244,21 @@ browserscript:
     limits:
       cpu: 4
       memory: 3Gi
-  ## Other env variables needed to set in the synthetic-pop-browserscript  playback engine pod
+
+  ## Other env variables needed to set in the synthetic-pop-browserscript playback engine pod
+  ## See "Playback Engine Proxy Environment Variables" section above for detailed explanation
   env:
     # Allows to select specific chrome driver in the self-hosted air-gaped pop. Ex - 102.0.5005.61
     - name: SE_DRIVER_VERSION
+      value: ""
+    # HTTP proxy server URL for HTTP requests. Example: "http://proxy.example.com:3128"
+    - name: HTTP_PROXY
+      value: ""
+    # HTTPS proxy server URL for HTTPS requests. Example: "http://proxy.example.com:3128"
+    - name: HTTPS_PROXY
+      value: ""
+    # Comma-separated list of hosts/domains to bypass proxy. Example: "localhost,.svc,.cluster.local,instana.backend.url"
+    - name: NO_PROXY
       value: ""
 
 # synthetic-pop-ism playback engine
@@ -204,7 +268,7 @@ ism:
   image:
     name: "synthetic-playback-ism"
     # image.tag is the tag name of the container image;
-    tag: "1.315.2"
+    tag: "1.315.4"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
@@ -229,13 +293,26 @@ ism:
       cpu: 300m
       memory: 500Mi
 
+  ## Other env variables needed to set in the synthetic-pop-ism playback engine pod
+  ## See "Playback Engine Proxy Environment Variables" section above for detailed explanation
+  env:
+    # HTTP proxy server URL for HTTP requests. Example: "http://proxy.example.com:3128"
+    - name: HTTP_PROXY
+      value: ""
+    # HTTPS proxy server URL for HTTPS requests. Example: "http://proxy.example.com:3128"
+    - name: HTTPS_PROXY
+      value: ""
+    # Comma-separated list of hosts/domains to bypass proxy. Example: "localhost,.svc,.cluster.local,instana.backend.url"
+    - name: NO_PROXY
+      value: ""
+
 # redis
 redis:
   # redis.enabled specifies whether to deploy redis pod, default is true.
   enabled: true
   image:
     name: "redis"
-    tag: "1.315.1"
+    tag: "1.315.3"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 

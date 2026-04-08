@@ -126,6 +126,7 @@ spec:
         # Loglevel: ALL, TRACE, DEBUG, INFO, WARN, ERROR, FATAL, MARK
         - name: LOGLEVEL
           value: {{ .Values.http.traceLevel | default "INFO"	| quote }}
+        {{- include "synthetic-pop.http.envVariables" . | nindent 8 }}
       volumes:
       - name: tmp
         emptyDir: {} 

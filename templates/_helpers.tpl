@@ -231,3 +231,39 @@ Get all non empty ENV variables from browserscript
   {{- end }}
 {{- end }}
 {{- end }}
+
+{{/*
+Get all non empty ENV variables from http
+*/}}
+{{- define "synthetic-pop.http.envVariables" -}}
+{{- $envVars := .Values.http.env | default list -}}
+{{- range $envVars }}
+  {{- if .value }}
+    {{- printf "- name: %s\n  value: %q\n" .name .value -}}
+  {{- end }}
+{{- end }}
+{{- end }}
+
+{{/*
+Get all non empty ENV variables from javascript
+*/}}
+{{- define "synthetic-pop.javascript.envVariables" -}}
+{{- $envVars := .Values.javascript.env | default list -}}
+{{- range $envVars }}
+  {{- if .value }}
+    {{- printf "- name: %s\n  value: %q\n" .name .value -}}
+  {{- end }}
+{{- end }}
+{{- end }}
+
+{{/*
+Get all non empty ENV variables from ism
+*/}}
+{{- define "synthetic-pop.ism.envVariables" -}}
+{{- $envVars := .Values.ism.env | default list -}}
+{{- range $envVars }}
+  {{- if .value }}
+    {{- printf "- name: %s\n  value: %q\n" .name .value -}}
+  {{- end }}
+{{- end }}
+{{- end }}
