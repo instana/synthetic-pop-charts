@@ -118,6 +118,9 @@ spec:
         # timeout for DNS, default is 10 seconds
         - name: DNS_TIMEOUT
           value: {{ .Values.ism.maxTimeout.DNS | quote }}
+        # timeout for ICMP, default is 10 seconds
+        - name: ICMP_TIMEOUT
+          value: {{ .Values.ism.maxTimeout.ICMP | quote }}
         # timeout for SSLCertificate, default is 30 seconds
         - name: SSLCERTIFICATE_TIMEOUT
           value: {{ .Values.ism.maxTimeout.SSLCertificate | quote }}

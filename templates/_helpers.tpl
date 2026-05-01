@@ -267,3 +267,15 @@ Get all non empty ENV variables from ism
   {{- end }}
 {{- end }}
 {{- end }}
+
+{{/*
+Validate redisNamespace configuration based on redis.enabled setting
+*/}}
+{{- define "synthetic-pop.validateRedisNamespace" -}}
+{{- if and .Values.redis.enabled (ne .Values.controller.redisNamespace "") }}
+{{- fail "ERROR: controller.redisNamespace must be empty when redis.enabled=true. When using the internal Redis, it is deployed in the same namespace as the PoP." }}
+{{- end }}
+{{- if and (not .Values.redis.enabled) (eq .Values.controller.redisNamespace "") }}
+{{- fail "ERROR: controller.redisNamespace must be set when redis.enabled=false. When using an external Redis instance, you must specify the namespace where Redis is deployed." }}
+{{- end }}
+{{- end }}

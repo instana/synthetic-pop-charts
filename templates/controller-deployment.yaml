@@ -1,4 +1,5 @@
 {{- if .Values.controller.enabled }}
+{{- include "synthetic-pop.validateRedisNamespace" . }}
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -133,6 +134,8 @@ spec:
         - name: WEBPAGESCRIPT_PLAYBACK_URL
           value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=BrowserScriptPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
         - name: DNS_PLAYBACK_URL
+          value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=ISMPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
+        - name: ICMP_PLAYBACK_URL
           value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=ISMPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"
         - name: SSLCERTIFICATE_PLAYBACK_URL
           value: "redis://synthetic-pop-redis:6378/0?ConfigurationQueue=ISMPlaybackConfigQueue&AARQueue=AARQueue&AARRetryQueue=AARRetryQueue"

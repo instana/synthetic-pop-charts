@@ -4,7 +4,7 @@ controller:
   enabled: true
   image:
     name: "synthetic-pop-controller"
-    tag: "1.315.1"
+    tag: "1.317.0"
     # image.pullPolicy specifies when to pull the image
     pullPolicy: "Always"
 
@@ -95,7 +95,7 @@ http:
   image:
     name: "synthetic-playback-http"
     # tag is the tag name of the container image
-    tag: "1.316.0"
+    tag: "1.317.1"
     # image.pullPolicy specifies when to pull the image.
     pullPolicy: "Always"
 
@@ -166,7 +166,7 @@ javascript:
   image:
     name: "synthetic-playback-javascript"
     # image.tag is the tag name of the container image
-    tag: "1.316.0"
+    tag: "1.317.1"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
@@ -212,7 +212,7 @@ browserscript:
   image:
     name: "synthetic-playback-browserscript"
     # image.tag is the tag name of the container image;
-    tag: "1.315.2"
+    tag: "1.317.6"
     # image.pullPolicy specifies when to pull the image.
     pullPolicy: "Always"
 
@@ -268,7 +268,7 @@ ism:
   image:
     name: "synthetic-playback-ism"
     # image.tag is the tag name of the container image;
-    tag: "1.315.4"
+    tag: "1.317.1"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
@@ -281,6 +281,7 @@ ism:
   # ism.maxTimeout is the default timeout value for different test type in synthetic-pop-ism playback engine
   maxTimeout:
     DNS: 10s
+    ICMP: 10s
     SSLCertificate: 30s
 
   ## Default Container resource requests and limits
@@ -312,7 +313,7 @@ redis:
   enabled: true
   image:
     name: "redis"
-    tag: "1.315.3"
+    tag: "1.317.0"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
