@@ -2,14 +2,14 @@ annotations:
   artifacthub.io/changes: "- kind: fixed\n  description: |\n    The following security
     vulnerabilities are fixed in Synthetic PoP:\n    - CVE-2026-2332\n    - CVE-2026-6321
     \n    - CVE-2026-22745\n    - CVE-2026-41650\n    - CVE-2026-43870\n    - CVE-2026-44492\n
-    \   - CVE-2026-44494\n"
+    \   - CVE-2026-44494\n    - CVE-2026-41907\n    - CVE-2026-44705\n    - CVE-2026-33750\n"
   artifacthub.io/links: |
     - name: Instana website
       url: https://www.instana.com
     - name: Instana Synthetic PoP Helm charts
       url: https://github.com/instana/synthetic-pop-charts
 apiVersion: v2
-appVersion: 1.320.0
+appVersion: 1.320.1
 description: Helm chart to install Instana Synthetic PoP (Point of Presence)
 home: https://artifacthub.io/packages/helm/instana/synthetic-pop
 icon: https://agents.instana.io/helm/synthetic-pop-logo.png
@@ -22,4 +22,4 @@ maintainers:
   name: Navami Narendralal
 name: synthetic-pop
 type: application
-version: 1.2.46
+version: 1.2.47
