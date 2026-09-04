@@ -3,21 +3,14 @@ annotations:
     - kind: fixed
       description: |
         The following security vulnerabilities are fixed in Synthetic PoP:
-        - CVE-2026-9828
-        - CVE-2026-12143
-        - CVE-2026-12802
-        - CVE-2026-13149
-        - CVE-2026-13586
-        - CVE-2026-14257
-        - CVE-2026-15055
-        - CVE-2026-45820
-        - CVE-2026-59639
-        - CVE-2026-59642
-        - CVE-2026-59647
-        - CVE-2026-67319
-        - CVE-2026-68494
+        - CVE-2026-10051
+        - CVE-2026-59903
+        - CVE-2026-62243
+        - CVE-2026-62380
         - CVE-2026-71430
         - CVE-2026-71498
+        - CVE-2026-75595
+        - CVE-2026-75596
   artifacthub.io/links: |
     - name: Instana website
       url: https://www.instana.com
