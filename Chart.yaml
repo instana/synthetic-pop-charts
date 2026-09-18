@@ -1,23 +1,22 @@
 annotations:
-  artifacthub.io/changes: |
-    - kind: fixed
-      description: |
-        The following security vulnerabilities are fixed in Synthetic PoP:
-        - CVE-2026-10051
-        - CVE-2026-59903
-        - CVE-2026-62243
-        - CVE-2026-62380
-        - CVE-2026-71430
-        - CVE-2026-71498
-        - CVE-2026-75595
-        - CVE-2026-75596
+  artifacthub.io/changes: "- kind: fixed\n  description: |\n    The following security
+    vulnerabilities are fixed in Synthetic PoP:\n    - CVE-2026-47891\n    - CVE-2026-59313\n
+    \   - CVE-2026-69192\n    - CVE-2026-73088\n    - CVE-2026-73089\n- kind: changed\n
+    \ description: |\n    Upgraded the Synthetic PoP BrowserScript playback engine
+    from Chrome 113 to Chrome 144, including fixes for multiple high-severity security
+    vulnerabilities.\n    \n    Review the Chrome release notes for deprecated features
+    and other changes that may impact existing synthetic tests: https://developer.chrome.com/release-notes"
   artifacthub.io/links: |
     - name: Instana website
       url: https://www.instana.com
     - name: Instana Synthetic PoP Helm charts
       url: https://github.com/instana/synthetic-pop-charts
+  artifacthub.io/notes: |
+    Starting with R326, Self-Hosted deployments using self-signed or private CA certificates may require additional PoP controller configuration.
+
+    See the Instana Self-Hosted Standard Edition documentation for details: https://www.ibm.com/docs/en/instana-observability/standard
 apiVersion: v2
-appVersion: 1.325.1
+appVersion: 1.326.0
 description: Helm chart to install Instana Synthetic PoP (Point of Presence)
 home: https://artifacthub.io/packages/helm/instana/synthetic-pop
 icon: https://agents.instana.io/helm/synthetic-pop-logo.png
@@ -30,4 +29,4 @@ maintainers:
   name: Navami Narendralal
 name: synthetic-pop
 type: application
-version: 1.2.54
+version: 1.2.55
