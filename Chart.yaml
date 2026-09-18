@@ -1,20 +1,24 @@
 annotations:
-  artifacthub.io/changes: "- kind: fixed\n  description: |\n    The following security
-    vulnerabilities are fixed in Synthetic PoP:\n    - CVE-2026-47891\n    - CVE-2026-59313\n
-    \   - CVE-2026-69192\n    - CVE-2026-73088\n    - CVE-2026-73089\n- kind: changed\n
-    \ description: |\n    Upgraded the Synthetic PoP BrowserScript playback engine
-    from Chrome 113 to Chrome 144, including fixes for multiple high-severity security
-    vulnerabilities.\n    \n    Review the Chrome release notes for deprecated features
-    and other changes that may impact existing synthetic tests: https://developer.chrome.com/release-notes"
+  artifacthub.io/changes: |
+    - kind: fixed
+      description: |
+        The following security vulnerabilities are fixed in Synthetic PoP:
+        - CVE-2026-47891
+        - CVE-2026-59313
+        - CVE-2026-69192
+        - CVE-2026-73088
+        - CVE-2026-73089
+    - kind: changed
+      description: |
+        Upgraded the Synthetic PoP BrowserScript playback engine from Chrome 113 to Chrome 144, including fixes for multiple high-severity security vulnerabilities. Review the Chrome release notes for deprecated features and other changes that may affect existing synthetic tests.
+    - kind: security
+      description: |
+        Starting with R326, Self-Hosted deployments using self-signed or private CA certificates may require additional PoP controller configuration. See the IBM Instana Observability Self-Hosted Standard Edition documentation for details.
   artifacthub.io/links: |
     - name: Instana website
       url: https://www.instana.com
     - name: Instana Synthetic PoP Helm charts
       url: https://github.com/instana/synthetic-pop-charts
-  artifacthub.io/notes: |
-    Starting with R326, Self-Hosted deployments using self-signed or private CA certificates may require additional PoP controller configuration.
-
-    See the Instana Self-Hosted Standard Edition documentation for details: https://www.ibm.com/docs/en/instana-observability/standard
 apiVersion: v2
 appVersion: 1.326.0
 description: Helm chart to install Instana Synthetic PoP (Point of Presence)
