@@ -1,28 +1,26 @@
 annotations:
   artifacthub.io/changes: "- kind: fixed\n  description: |\n    The following security
-    vulnerabilities are fixed in Synthetic PoP:\n    - CVE-2026-90711\n    - CVE-2026-102990\n
-    \   - CVE-2026-59283\n- kind: changed\n  description: |\n    Upgraded the Synthetic
-    PoP BrowserScript playback engine to Chrome 154. See: https://developer.chrome.com/release-notes\n-
-    kind: changed\n  description: |\n    Upgraded the Synthetic PoP BrowserScript
-    playback engine to Firefox 155. See: https://www.firefox.com/en-US/firefox/155.0/releasenotes\n
-    \   \n"
+    vulnerabilities are fixed in Synthetic PoP:\n    - CVE-2026-47883\n    - CVE-2026-47885\n
+    \   - CVE-2026-47886\n    - CVE-2026-47889\n    - CVE-2026-47891\n    - CVE-2026-59281\n
+    \   - CVE-2026-59283\n    - CVE-2026-59314\n    - CVE-2026-111755\n    - CVE-2026-111756\n
+    \    \n"
   artifacthub.io/links: |
     - name: Instana website
       url: https://www.instana.com
     - name: Instana Synthetic PoP Helm charts
       url: https://github.com/instana/synthetic-pop-charts
 apiVersion: v2
-appVersion: 1.328.2
+appVersion: 1.329.0
 description: Helm chart to install Instana Synthetic PoP (Point of Presence)
 home: https://artifacthub.io/packages/helm/instana/synthetic-pop
 icon: https://agents.instana.io/helm/synthetic-pop-logo.png
 maintainers:
+- email: Anirudhan.Pillai@ibm.com
+  name: Anirudhan Pillai
 - email: ediazgallego@ibm.com
   name: Esteban Diaz Gallego
 - email: Swetha.Lohith@ibm.com
   name: Swetha Lohith
-- email: navaminarendralal@ibm.com
-  name: Navami Narendralal
 name: synthetic-pop
 type: application
-version: 1.2.61
+version: 1.2.62

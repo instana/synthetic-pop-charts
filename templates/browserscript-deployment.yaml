@@ -128,6 +128,9 @@ spec:
         # enable/disable HAR collection
         - name: ENABLE_HAR_COLLECTION
           value: "yes"
+        # enable ESM module support
+        - name: ESM_ENABLED
+          value: {{ .Values.browserscript.esmEnabled | toString | quote }}
         {{- include "synthetic-pop.browserscript.envVariables" . | nindent 8 }}
       volumes: 
         - name: dshm

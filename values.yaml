@@ -4,7 +4,7 @@ controller:
   enabled: true
   image:
     name: "synthetic-pop-controller"
-    tag: "1.327.0"
+    tag: "1.328.1"
     # image.pullPolicy specifies when to pull the image
     pullPolicy: "Always"
 
@@ -33,7 +33,7 @@ controller:
   # Current release only supports syntheticType=WebpageAction,WebpageScript,HTTPAction,HTTPScript,BrowserScript,SSLCertificate,DNS,ICMP
   # API Simple test type: HTTPAction, API Script test type: HTTPScript
   # Browser Script test type: BrowserScript, Webpage Simple test type: WebpageAction and Webpage Script test type: WebpageScript
-  capabilities: "syntheticType=WebpageAction,WebpageScript,HTTPAction,HTTPScript,BrowserScript,SSLCertificate,DNS,ICMP;browserType=firefox,chrome;executionType=CI/CD;extensions=PW"
+  capabilities: "syntheticType=WebpageAction,WebpageScript,HTTPAction,HTTPScript,BrowserScript,SSLCertificate,DNS,ICMP;browserType=firefox,chrome;executionType=CI/CD;extensions=PW,CNP,ESM"
 
   # Optionally, controller.clusterName needs to be set with the name of the Kubernetes cluster that is to be displayed in Instana.
   # Set this value when Instana agent is installed to monitor this PoP.
@@ -95,7 +95,7 @@ http:
   image:
     name: "synthetic-playback-http"
     # tag is the tag name of the container image
-    tag: "1.327.0"
+    tag: "1.328.0"
     # image.pullPolicy specifies when to pull the image.
     pullPolicy: "Always"
 
@@ -166,7 +166,7 @@ javascript:
   image:
     name: "synthetic-playback-javascript"
     # image.tag is the tag name of the container image
-    tag: "1.327.0"
+    tag: "1.328.0"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
@@ -212,7 +212,7 @@ browserscript:
   image:
     name: "synthetic-playback-browserscript"
     # image.tag is the tag name of the container image;
-    tag: "1.327.2"
+    tag: "1.328.0"
     # image.pullPolicy specifies when to pull the image.
     pullPolicy: "Always"
 
@@ -234,6 +234,9 @@ browserscript:
   defaultDenyList: "www.google-analytics.com;googleads.g.doubleclick.net"
 
   isNewEngine: false
+
+  # browserscript.esmEnabled enables ESM module support (.mjs scripts and // @synthetic module=esm pragma)
+  esmEnabled: true
 
   ## Default Container resource requests and limits
   ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
@@ -268,7 +271,7 @@ ism:
   image:
     name: "synthetic-playback-ism"
     # image.tag is the tag name of the container image;
-    tag: "1.327.0"
+    tag: "1.328.1"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
@@ -313,7 +316,7 @@ redis:
   enabled: true
   image:
     name: "redis"
-    tag: "1.327.0"
+    tag: "1.328.0"
     # image.pullPolicy specifies when to pull the image container.
     pullPolicy: "Always"
 
